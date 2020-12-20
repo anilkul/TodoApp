@@ -8,5 +8,6 @@
 import Foundation
 
 protocol TodoListCellViewModelProtocol {
+  /// Stored Variables
   var todoItem: TodoItem { get }
 }

@@ -9,14 +9,17 @@ import Foundation
 import UIKit
 
 class TodoRouter: TodoRoutable {
+  // MARK: - Variables
+  /// Closures
   var pushViewController: ((UIViewController) -> Void)?
 
-  func newTodo() {
+  // MARK: - Routing Operations
+  final func newTodo() {
     let todoDetailViewController: TodoDetailViewController = ViewControllerMaker.todoDetailViewController()
     pushViewController?(todoDetailViewController)
   }
   
-  func goToTodo(with todoItem: TodoItem) {
+  final func goToTodo(with todoItem: TodoItem) {
     let todoDetailViewController: TodoDetailViewController = ViewControllerMaker.todoDetailViewController(todoItem: todoItem)
     pushViewController?(todoDetailViewController)
   }

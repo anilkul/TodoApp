@@ -8,10 +8,15 @@
 import UIKit
 
 class TodoListViewController: UIViewController {
+  // MARK: - Variables
+  /// IBOutlets
   @IBOutlet weak var tableView: UITableView!
+  
+  /// Stored Variables
   var router: Pushable!
   var viewModel: TodoListViewModelProtocol!
   
+  // MARK: - UI Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     navigationController?.delegate = self
@@ -22,17 +27,20 @@ class TodoListViewController: UIViewController {
     viewModel.viewIsReady()
   }
   
-  func createBindings() {
-    router.pushViewController = pushViewController()
-    viewModel.updateData = updateData()
-  }
-  
-  func registerCells() {
+  // MARK: - UI Operations
+  final func registerCells() {
     tableView.register(UINib(nibName: String(describing: TodoListCell.self), bundle: nil), forCellReuseIdentifier: String(describing: TodoListCell.self))
   }
   
+  // MARK: - IBActions
   @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
     router.newTodo()
+  }
+  
+  // MARK: - Binding Operations
+  final func createBindings() {
+    router.pushViewController = pushViewController()
+    viewModel.updateData = updateData()
   }
 }
 

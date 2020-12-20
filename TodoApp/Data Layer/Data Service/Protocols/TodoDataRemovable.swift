@@ -8,5 +8,6 @@
 import Foundation
 
 protocol TodoDataRemovable {
+  /// Functions
   func deleteTodoItem(with completionDate: Double, _ completion: VoidHandler?)
 }

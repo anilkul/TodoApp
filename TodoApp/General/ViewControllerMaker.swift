@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct ViewControllerMaker {
+  // MARK: - Generation Operations
   static func make(with identifier: String, from storyboard: UIStoryboard) -> UIViewController? {
     return storyboard.instantiateViewController(withIdentifier: identifier)
   }

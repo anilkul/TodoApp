@@ -8,7 +8,11 @@
 import UIKit
 
 protocol Pushable {
+  /// Closures
+  var pushViewController: ((UIViewController) -> Void)? { get set }
+  
+  /// Functions
   func newTodo()
   func goToTodo(with todoItem: TodoItem)
-  var pushViewController: ((UIViewController) -> Void)? { get set }
+  
 }

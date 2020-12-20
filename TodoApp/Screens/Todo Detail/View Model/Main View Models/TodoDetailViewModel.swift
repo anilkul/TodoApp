@@ -8,23 +8,31 @@
 import Foundation
 
 class TodoDetailViewModel: TodoDetailViewModelProtocol {
+  // MARK: - Variables
+  /// Stored Variables
   var dataService: TodoDataEditable
   var todoItem: TodoItem?
   var isNew: Bool {
     return todoItem == nil
   }
+  
+  /// Computed Variables
   var header: String {
     return isNew ? Strings.newTodoHeader : Strings.editTodoHeader
   }
+  
+  /// Closures
   var returnToTodoList: (() -> Void)?
   var reloadList: (() -> Void)?
   
+  // MARK: - Initializer
   init(dataService: TodoDataEditable, todoItem: TodoItem? = nil) {
     self.todoItem = todoItem
     self.dataService = dataService
   }
   
-  func completeEditing(title: String?, detail: String?) {
+  // MARK: - Logic
+  final func completeEditing(title: String?, detail: String?) {
     guard let title = title?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
     let detail = detail?.trimmingCharacters(in: .whitespacesAndNewlines) ?? Strings.emptyString
     let completionDate = todoItem?.completionDate ?? Date().timeIntervalSince1970.magnitude
@@ -37,20 +45,21 @@ class TodoDetailViewModel: TodoDetailViewModelProtocol {
       : self.update(todoItem)
   }
   
-  func add(_ todoItem: TodoItem) {
+  // MARK: - Data Operations
+  final func add(_ todoItem: TodoItem) {
     dataService.add(todoItem: todoItem, completionBlock())
   }
   
-  func update(_ todoItem: TodoItem) {
+  final func update(_ todoItem: TodoItem) {
     dataService.update(todoItem: todoItem, completionBlock())
   }
   
-  func deleteTodoItem() {
+  final func deleteTodoItem() {
     guard let completionDate = todoItem?.completionDate else { return }
     dataService.deleteTodoItem(with: completionDate, completionBlock())
   }
   
-  func completionBlock() -> VoidHandler {
+  final func completionBlock() -> VoidHandler {
     return { [weak self] in
       guard let self = self else { return }
       self.returnToTodoList?()

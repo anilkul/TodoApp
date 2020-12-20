@@ -134,11 +134,11 @@
 			children = (
 				88B86B7B258F64BF0003450A /* Info.plist */,
 				88B86B73258F64BD0003450A /* TodoApp.xcdatamodeld */,
-				88B86C3D258FB4A10003450A /* Resources */,
-				88B86BB6258F77990003450A /* Helpers */,
 				88B86B9E258F711C0003450A /* General */,
-				88B86B8B258F6E3C0003450A /* Data Layer */,
 				88B86B83258F6A540003450A /* Screens */,
+				88B86B8B258F6E3C0003450A /* Data Layer */,
+				88B86BB6258F77990003450A /* Helpers */,
+				88B86C3D258FB4A10003450A /* Resources */,
 			);
 			path = TodoApp;
 			sourceTree = "<group>";
@@ -146,8 +146,8 @@
 		88B86B83258F6A540003450A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				88B86BA5258F72EF0003450A /* Todo Detail */,
 				88B86B84258F6A5C0003450A /* Todo List */,
+				88B86BA5258F72EF0003450A /* Todo Detail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -187,7 +187,6 @@
 				88B86C2A258F99290003450A /* TodoListViewController+DataSource.swift */,
 				88B86C2D258F99360003450A /* TodoListViewController+Delegate.swift */,
 				88B86BA8258F73200003450A /* TodoListViewController+Bindings.swift */,
-				88B86B8D258F6EAF0003450A /* TodoRouter.swift */,
 			);
 			path = "Main Classes";
 			sourceTree = "<group>";
@@ -195,6 +194,7 @@
 		88B86B88258F6A7C0003450A /* Cell Classes */ = {
 			isa = PBXGroup;
 			children = (
+				88B86C06258F8F630003450A /* TodoListCell.swift */,
 			);
 			path = "Cell Classes";
 			sourceTree = "<group>";
@@ -202,6 +202,7 @@
 		88B86B89258F6A830003450A /* IB Items */ = {
 			isa = PBXGroup;
 			children = (
+				88B86C0F258F8FAB0003450A /* Cell UI */,
 			);
 			path = "IB Items";
 			sourceTree = "<group>";
@@ -247,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				88B86B9F258F71290003450A /* ViewControllerMaker.swift */,
+				88B86B8D258F6EAF0003450A /* TodoRouter.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -275,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				88B86C04258F8F390003450A /* Main Classes */,
-				88B86C05258F8F400003450A /* Cell Classes */,
 			);
 			path = "View Classes";
 			sourceTree = "<group>";
@@ -400,18 +401,9 @@
 			path = "Main Classes";
 			sourceTree = "<group>";
 		};
-		88B86C05258F8F400003450A /* Cell Classes */ = {
-			isa = PBXGroup;
-			children = (
-				88B86C06258F8F630003450A /* TodoListCell.swift */,
-			);
-			path = "Cell Classes";
-			sourceTree = "<group>";
-		};
 		88B86C0E258F8F970003450A /* IB Components */ = {
 			isa = PBXGroup;
 			children = (
-				88B86C0F258F8FAB0003450A /* Cell UI */,
 			);
 			path = "IB Components";
 			sourceTree = "<group>";

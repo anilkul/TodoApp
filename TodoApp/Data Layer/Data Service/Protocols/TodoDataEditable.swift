@@ -8,6 +8,7 @@
 import Foundation
 
 protocol TodoDataEditable: TodoDataRemovable {
+  /// Functions
   func add(todoItem: TodoItem, _ completion: VoidHandler?)
   func update(todoItem: TodoItem, _ completion: VoidHandler?)
 }

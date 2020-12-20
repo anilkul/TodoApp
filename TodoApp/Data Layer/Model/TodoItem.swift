@@ -9,7 +9,7 @@ import Foundation
 
 // A presentation model for Todo Entity
 struct TodoItem {
-  var title: String = ""
-  var detail: String = ""
+  var title: String = Strings.emptyString
+  var detail: String = Strings.emptyString
   var completionDate: Double = 0
 }

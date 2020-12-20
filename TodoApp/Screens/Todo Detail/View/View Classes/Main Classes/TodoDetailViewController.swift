@@ -8,21 +8,26 @@
 import UIKit
 
 class TodoDetailViewController: UIViewController {
-  
+  // MARK: - Variables
+  /// IBOutlets
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var detailTextView: UITextView!
+  
+  /// Stored Variables
   var viewModel: TodoDetailViewModelProtocol! {
     didSet {
       viewModel.returnToTodoList = returnToTodoList()
     }
   }
   
+  // MARK: - UI Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
   }
   
-  func configureUI() {
+  // MARK: - UI Operations
+  final func configureUI() {
     navigationItem.title = viewModel.header
     titleTextField.text = viewModel.todoItem?.title
     detailTextView.text = viewModel.todoItem?.detail
@@ -34,25 +39,26 @@ class TodoDetailViewController: UIViewController {
     addDeleteButtonIfNeeded()
   }
   
-  func addKeyboardDismissGesture() {
+  final func addKeyboardDismissGesture() {
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
     self.view.addGestureRecognizer(tapGesture)
   }
   
-  @objc func dismissKeyboard() {
-    self.view.endEditing(true)
-  }
-  
-  func addDeleteButtonIfNeeded() {
+  final func addDeleteButtonIfNeeded() {
     if viewModel.isNew { return }
     let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteButtonPressed(_:)))
     navigationItem.rightBarButtonItems?.append(deleteButton)
   }
   
-  @objc func deleteButtonPressed(_ sender: UIBarButtonItem) {
+  @objc final func dismissKeyboard() {
+    self.view.endEditing(true)
+  }
+  
+  @objc final func deleteButtonPressed(_ sender: UIBarButtonItem) {
     viewModel.deleteTodoItem()
   }
   
+  // MARK: - IBActions
   @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
     viewModel.completeEditing(title: titleTextField.text, detail: detailTextView.text)
   }

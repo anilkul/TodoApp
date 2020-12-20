@@ -8,5 +8,6 @@
 import Foundation
 
 protocol TodoDataListable: TodoDataRemovable {
+  /// Functions
   func todoList(fetchOffset: Int, _ completion: (([TodoItem]) -> Void)?)
 }

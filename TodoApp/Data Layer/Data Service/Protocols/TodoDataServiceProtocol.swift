@@ -8,5 +8,6 @@
 import Foundation
 
 protocol TodoDataServiceProtocol: TodoDataEditable, TodoDataListable {
+  /// Functions
   var persistencyService: TodoPersistencyServiceProtocol { get }
 }

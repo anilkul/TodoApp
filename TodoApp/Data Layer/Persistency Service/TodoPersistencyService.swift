@@ -9,11 +9,15 @@ import CoreData
 import Foundation
 
 class TodoPersistencyService: TodoPersistencyServiceProtocol {
+  // MARK: - Variables
+  /// Computed Variables
   var managedObjectContext: NSManagedObjectContext {
     return CoreDataStack.shared.persistentContainer.viewContext
   }
   
-  func add(todoItem: TodoItem, _ completion: VoidHandler?) {
+  // MARK: - Core Data Operations
+  /// Create
+  final func add(todoItem: TodoItem, _ completion: VoidHandler?) {
     CoreDataStack.shared.persistentContainer.performBackgroundTask { managedObjectContext in
       managedObjectContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
       do {
@@ -28,7 +32,8 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
     }
   }
   
-  func fetchTodoList(fetchOffset: Int) -> [TodoItem] {
+  /// Read
+  final func fetchTodoList(fetchOffset: Int) -> [TodoItem] {
     let request: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
     request.sortDescriptors = TodoEntity.SortDescriptors.fetch.sortDescriptors
     request.returnsObjectsAsFaults = false
@@ -43,7 +48,8 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
     }
   }
   
-  func update(todoItem: TodoItem, _ completion: VoidHandler?) {
+  /// Update
+  final func update(todoItem: TodoItem, _ completion: VoidHandler?) {
     CoreDataStack.shared.persistentContainer.performBackgroundTask { managedObjectContext in
       managedObjectContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
       let request: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
@@ -60,7 +66,8 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
     }
   }
   
-  func deleteTodo(with completionDate: Double, completion: VoidHandler?) {
+  /// Delete
+  final func deleteTodo(with completionDate: Double, completion: VoidHandler?) {
     CoreDataStack.shared.persistentContainer.performBackgroundTask { managedObjectContext in
       let request: NSFetchRequest<NSFetchRequestResult> = TodoEntity.fetchRequest()
       request.predicate = TodoEntity.Predicate.delete(completionDate: completionDate).query

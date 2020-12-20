@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension TodoListViewController {
-  func pushViewController() -> (UIViewController) -> Void {
+  final func pushViewController() -> (UIViewController) -> Void {
     return { [weak self] viewController in
       guard let self = self else { return }
       DispatchQueue.main.async {
@@ -18,7 +18,7 @@ extension TodoListViewController {
     }
   }
   
-  func updateData() -> () -> Void {
+  final func updateData() -> () -> Void {
     return { [weak self] in
       guard let self = self else { return }
       DispatchQueue.main.async {
@@ -27,7 +27,7 @@ extension TodoListViewController {
     }
   }
   
-  func reloadList() -> (() -> Void) {
+  final func reloadList() -> (() -> Void) {
     return { [weak self] in
       guard let self = self else { return }
       DispatchQueue.main.async {

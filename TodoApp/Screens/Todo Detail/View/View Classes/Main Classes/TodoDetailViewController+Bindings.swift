@@ -8,7 +8,7 @@
 import Foundation
 
 extension TodoDetailViewController {
-  func returnToTodoList() -> () -> Void {
+  final func returnToTodoList() -> () -> Void {
     return { [weak self] in
       guard let self = self else { return }
       DispatchQueue.main.async {

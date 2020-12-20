@@ -8,13 +8,18 @@
 import Foundation
 
 class TodoDataService: TodoDataServiceProtocol {
+  // MARK: - Variables
+  /// Stored Variables
   var persistencyService: TodoPersistencyServiceProtocol
   
+  // MARK: - Initializer
   init(persistencyService: TodoPersistencyServiceProtocol) {
     self.persistencyService = persistencyService
   }
   
-  func add(todoItem: TodoItem, _ completion: VoidHandler?) {
+  // MARK: - Data Operations
+  /// Create
+  final func add(todoItem: TodoItem, _ completion: VoidHandler?) {
     DispatchQueue.main.async {
       self.persistencyService.add(todoItem: todoItem) {
         completion?()
@@ -22,13 +27,15 @@ class TodoDataService: TodoDataServiceProtocol {
     }
   }
   
-  func todoList(fetchOffset: Int, _ completion: (([TodoItem]) -> Void)?) {
+  /// Read
+  final func todoList(fetchOffset: Int, _ completion: (([TodoItem]) -> Void)?) {
     DispatchQueue.main.async {
       completion?(self.persistencyService.fetchTodoList(fetchOffset: fetchOffset))
     }
   }
   
-  func update(todoItem: TodoItem, _ completion: VoidHandler?) {
+  /// Update
+  final func update(todoItem: TodoItem, _ completion: VoidHandler?) {
     DispatchQueue.main.async {
       self.persistencyService.update(todoItem: todoItem) {
         completion?()
@@ -36,7 +43,8 @@ class TodoDataService: TodoDataServiceProtocol {
     }
   }
   
-  func deleteTodoItem(with completionDate: Double, _ completion: VoidHandler?) {
+  /// Delete
+  final func deleteTodoItem(with completionDate: Double, _ completion: VoidHandler?) {
     DispatchQueue.main.async {
       self.persistencyService.deleteTodo(with: completionDate) {
         completion?()

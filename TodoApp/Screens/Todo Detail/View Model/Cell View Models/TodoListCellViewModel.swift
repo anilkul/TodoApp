@@ -8,8 +8,11 @@
 import Foundation
 
 class TodoListCellViewModel: TodoListCellViewModelProtocol {
+  // MARK: - Variables
+  /// Stored Variables
   var todoItem: TodoItem
   
+  // MARK: - Initializer
   init(todoItem: TodoItem) {
     self.todoItem = todoItem
   }
