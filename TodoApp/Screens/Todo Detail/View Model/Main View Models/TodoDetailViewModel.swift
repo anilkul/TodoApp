@@ -14,6 +14,9 @@ class TodoDetailViewModel: TodoDetailViewModelProtocol {
     return todoItem == nil
   }
   
+  var returnToTodoList: (() -> Void)?
+  var reloadList: (() -> Void)?
+  
   init(dataService: TodoDataEditable, todoItem: TodoItem? = nil) {
     self.todoItem = todoItem
     self.dataService = dataService
@@ -30,10 +33,18 @@ class TodoDetailViewModel: TodoDetailViewModelProtocol {
   }
   
   func add(_ todoItem: TodoItem) {
-    dataService.add(todoItem: todoItem, nil)
+    dataService.add(todoItem: todoItem, completionBlock())
   }
   
   func update(_ todoItem: TodoItem) {
-    dataService.update(todoItem: todoItem, nil)
+    dataService.update(todoItem: todoItem, completionBlock())
+  }
+  
+  func completionBlock() -> VoidHandler {
+    return { [weak self] in
+      guard let self = self else { return }
+      self.returnToTodoList?()
+      self.reloadList?()
+    }
   }
 }

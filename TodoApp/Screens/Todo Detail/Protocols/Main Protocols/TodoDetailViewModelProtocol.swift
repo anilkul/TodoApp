@@ -12,5 +12,8 @@ protocol TodoDetailViewModelProtocol {
   var dataService: TodoDataEditable { get }
   var isNew: Bool { get }
   
+  var returnToTodoList: (() -> Void)? { get set }
+  var reloadList: (() -> Void)? { get set }
+  
   func completeEditing(title: String?, detail: String?)
 }

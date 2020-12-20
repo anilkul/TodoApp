@@ -14,6 +14,7 @@ class TodoListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    navigationController?.delegate = self
     viewModel = TodoListViewModel()
     router = TodoRouter()
     createBindings()
@@ -43,3 +44,11 @@ extension TodoListViewController {
     self.viewModel.fetchItems(for: .nextPage)
   }
 }
+
+extension TodoListViewController: UINavigationControllerDelegate {
+  func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+    guard let todoDetailViewController = viewController as? TodoDetailViewController else { return }
+    todoDetailViewController.viewModel.reloadList = reloadList()
+  }
+}
+

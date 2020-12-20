@@ -11,7 +11,11 @@ class TodoDetailViewController: UIViewController {
   
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var detailTextView: UITextView!
-  var viewModel: TodoDetailViewModelProtocol!
+  var viewModel: TodoDetailViewModelProtocol! {
+    didSet {
+      viewModel.returnToTodoList = returnToTodoList()
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
