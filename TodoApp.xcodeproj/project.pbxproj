@@ -29,6 +29,11 @@
 		88B86BC6258F79B40003450A /* TodoPersistencyServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BC5258F79B40003450A /* TodoPersistencyServiceProtocol.swift */; };
 		88B86BCA258F79D80003450A /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BC9258F79D80003450A /* Typealiases.swift */; };
 		88B86BCE258F7A820003450A /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BCD258F7A820003450A /* TodoItem.swift */; };
+		88B86BD3258F81E60003450A /* TodoDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BD2258F81E60003450A /* TodoDataService.swift */; };
+		88B86BD8258F82200003450A /* TodoDataRemovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BD7258F82200003450A /* TodoDataRemovable.swift */; };
+		88B86BDD258F82390003450A /* TodoDataEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BDC258F82390003450A /* TodoDataEditable.swift */; };
+		88B86BE1258F82700003450A /* TodoDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BE0258F82700003450A /* TodoDataServiceProtocol.swift */; };
+		88B86BE4258F82830003450A /* TodoDataListable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BE3258F82830003450A /* TodoDataListable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +61,11 @@
 		88B86BC5258F79B40003450A /* TodoPersistencyServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoPersistencyServiceProtocol.swift; sourceTree = "<group>"; };
 		88B86BC9258F79D80003450A /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		88B86BCD258F7A820003450A /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		88B86BD2258F81E60003450A /* TodoDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataService.swift; sourceTree = "<group>"; };
+		88B86BD7258F82200003450A /* TodoDataRemovable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataRemovable.swift; sourceTree = "<group>"; };
+		88B86BDC258F82390003450A /* TodoDataEditable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataEditable.swift; sourceTree = "<group>"; };
+		88B86BE0258F82700003450A /* TodoDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataServiceProtocol.swift; sourceTree = "<group>"; };
+		88B86BE3258F82830003450A /* TodoDataListable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDataListable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +176,7 @@
 		88B86B8B258F6E3C0003450A /* Data Layer */ = {
 			isa = PBXGroup;
 			children = (
+				88B86BD1258F81CF0003450A /* Data Service */,
 				88B86BB2258F77650003450A /* Model */,
 				88B86B8C258F6E4B0003450A /* Persistency Service */,
 			);
@@ -283,6 +294,26 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		88B86BD1258F81CF0003450A /* Data Service */ = {
+			isa = PBXGroup;
+			children = (
+				88B86BD6258F820E0003450A /* Protocols */,
+				88B86BD2258F81E60003450A /* TodoDataService.swift */,
+			);
+			path = "Data Service";
+			sourceTree = "<group>";
+		};
+		88B86BD6258F820E0003450A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				88B86BD7258F82200003450A /* TodoDataRemovable.swift */,
+				88B86BDC258F82390003450A /* TodoDataEditable.swift */,
+				88B86BE3258F82830003450A /* TodoDataListable.swift */,
+				88B86BE0258F82700003450A /* TodoDataServiceProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -354,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88B86BB9258F77AB0003450A /* CodingUserInfoKey+Extensions.swift in Sources */,
+				88B86BE4258F82830003450A /* TodoDataListable.swift in Sources */,
 				88B86B98258F6EFD0003450A /* Pushable.swift in Sources */,
 				88B86BCE258F7A820003450A /* TodoItem.swift in Sources */,
 				88B86BC1258F77E10003450A /* DecoderConfigurationError.swift in Sources */,
@@ -362,14 +394,18 @@
 				88B86BB0258F76F10003450A /* TodoPersistencyService.swift in Sources */,
 				88B86BA0258F71290003450A /* ViewControllerMaker.swift in Sources */,
 				88B86BA9258F73200003450A /* TodoListViewController+Bindings.swift in Sources */,
+				88B86BD3258F81E60003450A /* TodoDataService.swift in Sources */,
 				88B86B6B258F64BD0003450A /* AppDelegate.swift in Sources */,
 				88B86BAD258F760D0003450A /* CoerDataStack.swift in Sources */,
 				88B86B6D258F64BD0003450A /* SceneDelegate.swift in Sources */,
 				88B86BC6258F79B40003450A /* TodoPersistencyServiceProtocol.swift in Sources */,
 				88B86B75258F64BD0003450A /* TodoApp.xcdatamodeld in Sources */,
+				88B86BDD258F82390003450A /* TodoDataEditable.swift in Sources */,
 				88B86B94258F6EF30003450A /* TodoRoutable.swift in Sources */,
+				88B86BD8258F82200003450A /* TodoDataRemovable.swift in Sources */,
 				88B86BCA258F79D80003450A /* Typealiases.swift in Sources */,
 				88B86BA3258F71A90003450A /* TodoDetailViewController.swift in Sources */,
+				88B86BE1258F82700003450A /* TodoDataServiceProtocol.swift in Sources */,
 				88B86BB4258F77760003450A /* TodoEntity.swift in Sources */,
 				88B86BBD258F77C30003450A /* NSManagedObjectContext+Extensions.swift in Sources */,
 			);
