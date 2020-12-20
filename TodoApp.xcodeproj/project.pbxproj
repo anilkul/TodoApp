@@ -20,6 +20,7 @@
 		88B86BA0258F71290003450A /* ViewControllerMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86B9F258F71290003450A /* ViewControllerMaker.swift */; };
 		88B86BA3258F71A90003450A /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BA2258F71A90003450A /* TodoDetailViewController.swift */; };
 		88B86BA9258F73200003450A /* TodoListViewController+Bindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BA8258F73200003450A /* TodoListViewController+Bindings.swift */; };
+		88B86BAD258F760D0003450A /* CoerDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BAC258F760D0003450A /* CoerDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		88B86B9F258F71290003450A /* ViewControllerMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMaker.swift; sourceTree = "<group>"; };
 		88B86BA2258F71A90003450A /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
 		88B86BA8258F73200003450A /* TodoListViewController+Bindings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoListViewController+Bindings.swift"; sourceTree = "<group>"; };
+		88B86BAC258F760D0003450A /* CoerDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoerDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		88B86B8C258F6E4B0003450A /* Persistency Service */ = {
 			isa = PBXGroup;
 			children = (
+				88B86BAC258F760D0003450A /* CoerDataStack.swift */,
 			);
 			path = "Persistency Service";
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				88B86BA0258F71290003450A /* ViewControllerMaker.swift in Sources */,
 				88B86BA9258F73200003450A /* TodoListViewController+Bindings.swift in Sources */,
 				88B86B6B258F64BD0003450A /* AppDelegate.swift in Sources */,
+				88B86BAD258F760D0003450A /* CoerDataStack.swift in Sources */,
 				88B86B6D258F64BD0003450A /* SceneDelegate.swift in Sources */,
 				88B86B75258F64BD0003450A /* TodoApp.xcdatamodeld in Sources */,
 				88B86B94258F6EF30003450A /* TodoRoutable.swift in Sources */,
