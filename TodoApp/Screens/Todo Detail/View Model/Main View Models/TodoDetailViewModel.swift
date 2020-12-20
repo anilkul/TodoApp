@@ -26,6 +26,9 @@ class TodoDetailViewModel: TodoDetailViewModelProtocol {
     guard let title = title?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
     let detail = detail?.trimmingCharacters(in: .whitespacesAndNewlines) ?? Strings.emptyString
     let completionDate = todoItem?.completionDate ?? Date().timeIntervalSince1970.magnitude
+    
+    if (title == todoItem?.title && detail == todoItem?.detail) || title.isEmpty { return }
+    
     let todoItem = TodoItem(title: title, detail: detail, completionDate: completionDate)
     self.isNew
       ? self.add(todoItem)
@@ -38,6 +41,11 @@ class TodoDetailViewModel: TodoDetailViewModelProtocol {
   
   func update(_ todoItem: TodoItem) {
     dataService.update(todoItem: todoItem, completionBlock())
+  }
+  
+  func deleteTodoItem() {
+    guard let completionDate = todoItem?.completionDate else { return }
+    dataService.deleteTodoItem(with: completionDate, completionBlock())
   }
   
   func completionBlock() -> VoidHandler {

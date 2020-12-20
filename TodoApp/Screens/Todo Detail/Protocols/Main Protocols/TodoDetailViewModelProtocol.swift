@@ -16,4 +16,5 @@ protocol TodoDetailViewModelProtocol {
   var reloadList: (() -> Void)? { get set }
   
   func completeEditing(title: String?, detail: String?)
+  func deleteTodoItem()
 }

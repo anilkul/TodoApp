@@ -25,6 +25,17 @@ class TodoDetailViewController: UIViewController {
   func configureUI() {
     titleTextField.text = viewModel.todoItem?.title
     detailTextView.text = viewModel.todoItem?.detail
+    addDeleteButtonIfNeeded()
+  }
+  
+  func addDeleteButtonIfNeeded() {
+    if viewModel.isNew { return }
+    let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteButtonPressed(_:)))
+    navigationItem.rightBarButtonItems?.append(deleteButton)
+  }
+  
+  @objc func deleteButtonPressed(_ sender: UIBarButtonItem) {
+    viewModel.deleteTodoItem()
   }
   
   @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
