@@ -35,4 +35,12 @@ class TodoDataService: TodoDataServiceProtocol {
       }
     }
   }
+  
+  func deleteTodoItem(with completionDate: Double, _ completion: VoidHandler?) {
+    DispatchQueue.main.async {
+      self.persistencyService.deleteTodo(with: completionDate) {
+        completion?()
+      }
+    }
+  }
 }

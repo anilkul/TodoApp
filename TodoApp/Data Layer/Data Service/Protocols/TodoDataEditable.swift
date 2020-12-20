@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TodoDataEditable {
+protocol TodoDataEditable: TodoDataRemovable {
   func add(todoItem: TodoItem, _ completion: VoidHandler?)
   func update(todoItem: TodoItem, _ completion: VoidHandler?)
 }
