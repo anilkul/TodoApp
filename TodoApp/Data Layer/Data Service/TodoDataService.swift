@@ -27,4 +27,12 @@ class TodoDataService: TodoDataServiceProtocol {
       completion?(self.persistencyService.fetchTodoList(fetchOffset: fetchOffset))
     }
   }
+  
+  func update(todoItem: TodoItem, _ completion: VoidHandler?) {
+    DispatchQueue.main.async {
+      self.persistencyService.update(todoItem: todoItem) {
+        completion?()
+      }
+    }
+  }
 }

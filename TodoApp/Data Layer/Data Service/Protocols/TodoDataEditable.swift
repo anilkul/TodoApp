@@ -9,4 +9,5 @@ import Foundation
 
 protocol TodoDataEditable {
   func add(todoItem: TodoItem, _ completion: VoidHandler?)
+  func update(todoItem: TodoItem, _ completion: VoidHandler?)
 }
