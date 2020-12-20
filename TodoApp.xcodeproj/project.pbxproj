@@ -41,6 +41,8 @@
 		88B86C02258F8F180003450A /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C01258F8F180003450A /* TodoListViewModel.swift */; };
 		88B86C08258F8F630003450A /* TodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C06258F8F630003450A /* TodoListCell.swift */; };
 		88B86C09258F8F630003450A /* TodoListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88B86C07258F8F630003450A /* TodoListCell.xib */; };
+		88B86C15258F91160003450A /* TodoListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C14258F91160003450A /* TodoListCellViewModel.swift */; };
+		88B86C1B258F913F0003450A /* TodoListCellViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C1A258F913F0003450A /* TodoListCellViewModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		88B86C01258F8F180003450A /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		88B86C06258F8F630003450A /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
 		88B86C07258F8F630003450A /* TodoListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListCell.xib; sourceTree = "<group>"; };
+		88B86C14258F91160003450A /* TodoListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCellViewModel.swift; sourceTree = "<group>"; };
+		88B86C1A258F913F0003450A /* TodoListCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCellViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,7 +342,8 @@
 		88B86BE8258F84720003450A /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				88B86BE9258F84830003450A /* TodoDetailViewModel.swift */,
+				88B86C11258F90F80003450A /* Main View Models */,
+				88B86C13258F91040003450A /* Cell View Models */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -346,7 +351,8 @@
 		88B86BED258F848C0003450A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				88B86BEE258F849D0003450A /* TodoDetailViewModelProtocol.swift */,
+				88B86C18258F912B0003450A /* Main Protocols */,
+				88B86C19258F91320003450A /* Cell Protocols */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -397,6 +403,38 @@
 				88B86C07258F8F630003450A /* TodoListCell.xib */,
 			);
 			path = "Cell UI";
+			sourceTree = "<group>";
+		};
+		88B86C11258F90F80003450A /* Main View Models */ = {
+			isa = PBXGroup;
+			children = (
+				88B86BE9258F84830003450A /* TodoDetailViewModel.swift */,
+			);
+			path = "Main View Models";
+			sourceTree = "<group>";
+		};
+		88B86C13258F91040003450A /* Cell View Models */ = {
+			isa = PBXGroup;
+			children = (
+				88B86C14258F91160003450A /* TodoListCellViewModel.swift */,
+			);
+			path = "Cell View Models";
+			sourceTree = "<group>";
+		};
+		88B86C18258F912B0003450A /* Main Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				88B86BEE258F849D0003450A /* TodoDetailViewModelProtocol.swift */,
+			);
+			path = "Main Protocols";
+			sourceTree = "<group>";
+		};
+		88B86C19258F91320003450A /* Cell Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				88B86C1A258F913F0003450A /* TodoListCellViewModelProtocol.swift */,
+			);
+			path = "Cell Protocols";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,6 +528,7 @@
 				88B86BFB258F8DEE0003450A /* Numbers.swift in Sources */,
 				88B86B75258F64BD0003450A /* TodoApp.xcdatamodeld in Sources */,
 				88B86BDD258F82390003450A /* TodoDataEditable.swift in Sources */,
+				88B86C15258F91160003450A /* TodoListCellViewModel.swift in Sources */,
 				88B86B94258F6EF30003450A /* TodoRoutable.swift in Sources */,
 				88B86BD8258F82200003450A /* TodoDataRemovable.swift in Sources */,
 				88B86BCA258F79D80003450A /* Typealiases.swift in Sources */,
@@ -499,6 +538,7 @@
 				88B86C02258F8F180003450A /* TodoListViewModel.swift in Sources */,
 				88B86BB4258F77760003450A /* TodoEntity.swift in Sources */,
 				88B86BBD258F77C30003450A /* NSManagedObjectContext+Extensions.swift in Sources */,
+				88B86C1B258F913F0003450A /* TodoListCellViewModelProtocol.swift in Sources */,
 				88B86BEA258F84830003450A /* TodoDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
