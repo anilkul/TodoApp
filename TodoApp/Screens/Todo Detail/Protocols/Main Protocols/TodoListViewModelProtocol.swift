@@ -14,4 +14,5 @@ protocol TodoListViewModelProtocol {
   var updateData: VoidHandler? { get set }
   
   func fetchItems(for paginationType: PaginationType)
+  func viewIsReady()
 }

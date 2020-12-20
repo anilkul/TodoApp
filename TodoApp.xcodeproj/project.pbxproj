@@ -46,6 +46,8 @@
 		88B86C1F258F92850003450A /* TodoListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C1E258F92850003450A /* TodoListViewModelProtocol.swift */; };
 		88B86C23258F92C20003450A /* PaginationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C22258F92C20003450A /* PaginationType.swift */; };
 		88B86C28258F94D10003450A /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C27258F94D10003450A /* Int+Extensions.swift */; };
+		88B86C2B258F99290003450A /* TodoListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C2A258F99290003450A /* TodoListViewController+DataSource.swift */; };
+		88B86C2E258F99360003450A /* TodoListViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C2D258F99360003450A /* TodoListViewController+Delegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +92,8 @@
 		88B86C1E258F92850003450A /* TodoListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModelProtocol.swift; sourceTree = "<group>"; };
 		88B86C22258F92C20003450A /* PaginationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationType.swift; sourceTree = "<group>"; };
 		88B86C27258F94D10003450A /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		88B86C2A258F99290003450A /* TodoListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoListViewController+DataSource.swift"; sourceTree = "<group>"; };
+		88B86C2D258F99360003450A /* TodoListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoListViewController+Delegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +182,10 @@
 			isa = PBXGroup;
 			children = (
 				88B86B6E258F64BD0003450A /* TodoListViewController.swift */,
-				88B86B8D258F6EAF0003450A /* TodoRouter.swift */,
+				88B86C2A258F99290003450A /* TodoListViewController+DataSource.swift */,
+				88B86C2D258F99360003450A /* TodoListViewController+Delegate.swift */,
 				88B86BA8258F73200003450A /* TodoListViewController+Bindings.swift */,
+				88B86B8D258F6EAF0003450A /* TodoRouter.swift */,
 			);
 			path = "Main Classes";
 			sourceTree = "<group>";
@@ -542,7 +548,9 @@
 				88B86BD3258F81E60003450A /* TodoDataService.swift in Sources */,
 				88B86B6B258F64BD0003450A /* AppDelegate.swift in Sources */,
 				88B86BAD258F760D0003450A /* CoerDataStack.swift in Sources */,
+				88B86C2B258F99290003450A /* TodoListViewController+DataSource.swift in Sources */,
 				88B86B6D258F64BD0003450A /* SceneDelegate.swift in Sources */,
+				88B86C2E258F99360003450A /* TodoListViewController+Delegate.swift in Sources */,
 				88B86BC6258F79B40003450A /* TodoPersistencyServiceProtocol.swift in Sources */,
 				88B86BFB258F8DEE0003450A /* Numbers.swift in Sources */,
 				88B86B75258F64BD0003450A /* TodoApp.xcdatamodeld in Sources */,

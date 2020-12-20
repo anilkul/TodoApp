@@ -16,6 +16,9 @@ class TodoListViewController: UIViewController {
     super.viewDidLoad()
     viewModel = TodoListViewModel()
     router = TodoRouter()
+    createBindings()
+    registerCells()
+    viewModel.viewIsReady()
   }
   
   func createBindings() {
@@ -23,7 +26,20 @@ class TodoListViewController: UIViewController {
     viewModel.updateData = updateData()
   }
   
+  func registerCells() {
+    tableView.register(UINib(nibName: String(describing: TodoListCell.self), bundle: nil), forCellReuseIdentifier: String(describing: TodoListCell.self))
+  }
+  
   @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
     router.newTodo()
+  }
+}
+
+extension TodoListViewController {
+  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    let currentOffset: CGFloat = scrollView.contentOffset.y
+    let maximumOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.size.height
+    guard maximumOffset - currentOffset <= Numbers.scrollViewOffsetThreshold else { return }
+    self.viewModel.fetchItems(for: .nextPage)
   }
 }

@@ -19,6 +19,10 @@ class TodoListViewModel: TodoListViewModelProtocol {
     dataService = TodoDataService(persistencyService: TodoPersistencyService())
   }
   
+  func viewIsReady() {
+    fetchItems(for: .initialPage)
+  }
+  
   func fetchItems(for paginationType: PaginationType) {
     switch paginationType {
     case .initialPage:
