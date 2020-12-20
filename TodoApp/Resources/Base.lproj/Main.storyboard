@@ -32,8 +32,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ps-EB-Xnu">
+                                <rect key="frame" x="0.0" y="140" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="inG-9B-rZM"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ymq-lb-hb8">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="141" width="414" height="721"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="lOn-TX-m41"/>
@@ -44,10 +51,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ymq-lb-hb8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="G2X-9U-xbq"/>
+                            <constraint firstItem="9ps-EB-Xnu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7LK-e9-siH"/>
+                            <constraint firstItem="Ymq-lb-hb8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="G2X-9U-xbq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ymq-lb-hb8" secondAttribute="trailing" id="Pmg-0S-AEH"/>
                             <constraint firstItem="Ymq-lb-hb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y3c-rc-zB2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ymq-lb-hb8" secondAttribute="bottom" id="dhF-o0-vMa"/>
+                            <constraint firstItem="9ps-EB-Xnu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k6u-sc-DUO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9ps-EB-Xnu" secondAttribute="trailing" id="kYd-H4-xFL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Todo List" id="ceI-0b-dZq">
@@ -138,6 +148,9 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
