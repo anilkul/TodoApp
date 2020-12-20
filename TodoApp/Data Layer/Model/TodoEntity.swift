@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-// Entity here that conforms Decodable protocol may seem like Interface Segregation but I wanted to show this can be used with network layer in future.
+// Entity here that conforms Decodable protocol may seem like Interface Segregation but I wanted to show that this could be used in network layer in future.
 class TodoEntity: NSManagedObject, Decodable {
   enum CodingKeys: CodingKey {
     case title, detail, completionDate
@@ -25,5 +25,13 @@ class TodoEntity: NSManagedObject, Decodable {
     self.title = try container.decode(String.self, forKey: .title)
     self.detail = try container.decode(String.self, forKey: .detail)
     self.completionDate = try container.decode(Double.self, forKey: .completionDate)
+  }
+}
+
+extension TodoEntity {
+  func assignValues(from item: TodoItem) {
+    self.title = item.title
+    self.detail = item.detail
+    self.completionDate = item.completionDate
   }
 }
