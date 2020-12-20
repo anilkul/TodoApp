@@ -9,15 +9,17 @@ import UIKit
 
 class TodoListViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
+  var router: Pushable!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    router = TodoRouter()
+    router.pushViewController = pushViewController()
   }
   
   
   @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-    
+    router.newTodo()
   }
 }
 

@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Todo Detail View Controller-->
         <scene sceneID="JXB-ws-h8h">
             <objects>
-                <viewController id="LSi-K2-0LK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TodoDetailViewController" id="LSi-K2-0LK" customClass="TodoDetailViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xr2-Yp-8ye">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
