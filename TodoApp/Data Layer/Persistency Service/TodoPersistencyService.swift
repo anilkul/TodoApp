@@ -9,6 +9,10 @@ import CoreData
 import Foundation
 
 class TodoPersistencyService: TodoPersistencyServiceProtocol {
+  var managedObjectContext: NSManagedObjectContext {
+    return CoreDataStack.shared.persistentContainer.viewContext
+  }
+  
   func add(todoItem: TodoItem, _ completion: VoidHandler?) {
     CoreDataStack.shared.persistentContainer.performBackgroundTask { managedObjectContext in
       managedObjectContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
@@ -20,6 +24,21 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
       } catch {
         fatalError(error.localizedDescription)
       }
+    }
+  }
+  
+  func fetchTodoList(fetchOffset: Int) -> [TodoItem] {
+    let request: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
+    request.sortDescriptors = [NSSortDescriptor(key: "completionDate", ascending: false)]
+    request.returnsObjectsAsFaults = false
+    request.fetchLimit = 20
+    request.fetchOffset = fetchOffset
+    do {
+      let todoList = try managedObjectContext.fetch(request)
+      return todoList.compactMap { $0.todoItem }
+    } catch {
+      print(error)
+      return []
     }
   }
 }

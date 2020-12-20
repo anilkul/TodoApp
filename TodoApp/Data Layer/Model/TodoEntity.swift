@@ -35,3 +35,10 @@ extension TodoEntity {
     self.completionDate = item.completionDate
   }
 }
+
+extension TodoEntity {
+  var todoItem: TodoItem? {
+    guard let title = title else { return nil }
+    return TodoItem(title: title, detail: detail ?? "", completionDate: completionDate)
+  }
+}

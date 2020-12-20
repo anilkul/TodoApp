@@ -9,4 +9,5 @@ import Foundation
 
 protocol TodoPersistencyServiceProtocol {
   func add(todoItem: TodoItem, _ completion: VoidHandler?)
+  func fetchTodoList(fetchOffset: Int) -> [TodoItem]
 }
