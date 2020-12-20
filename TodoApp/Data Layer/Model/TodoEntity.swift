@@ -9,6 +9,8 @@ import Foundation
 import CoreData
 
 // Entity here that conforms Decodable protocol may seem like Interface Segregation but I wanted to show that this could be used in network layer in future.
+// Make sure you set your decoder's userInfo key for our managed object context in CoreDataStack if you want to use this model for network requests as well
+/// Ex: decoder.userInfo[CodingUserInfoKey.managedObjectContext] = myPersistentContainer.viewContext
 class TodoEntity: NSManagedObject, Decodable {
   enum CodingKeys: CodingKey {
     case title, detail, completionDate

@@ -13,7 +13,9 @@ class TodoDetailViewModel: TodoDetailViewModelProtocol {
   var isNew: Bool {
     return todoItem == nil
   }
-  
+  var header: String {
+    return isNew ? Strings.newTodoHeader : Strings.editTodoHeader
+  }
   var returnToTodoList: (() -> Void)?
   var reloadList: (() -> Void)?
   

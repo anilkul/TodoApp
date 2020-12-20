@@ -9,4 +9,7 @@ import Foundation
 
 struct Strings {
   static let emptyString = ""
+  static let todoListDeleteSwipeActionTitle = "Delete"
+  static let newTodoHeader = "New Todo"
+  static let editTodoHeader = "Edit Todo"
 }

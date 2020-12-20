@@ -13,6 +13,7 @@ protocol TodoListViewModelProtocol {
   
   var updateData: VoidHandler? { get set }
   
-  func fetchItems(for paginationType: PaginationType)
   func viewIsReady()
+  func fetchItems(for paginationType: PaginationType)
+  func deleteTodo(at indexPath: IndexPath, with completionDate: Double)
 }

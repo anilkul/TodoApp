@@ -11,6 +11,7 @@ protocol TodoDetailViewModelProtocol {
   var todoItem: TodoItem? { get }
   var dataService: TodoDataEditable { get }
   var isNew: Bool { get }
+  var header: String { get }
   
   var returnToTodoList: (() -> Void)? { get set }
   var reloadList: (() -> Void)? { get set }

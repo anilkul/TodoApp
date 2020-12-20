@@ -23,6 +23,7 @@ class TodoDetailViewController: UIViewController {
   }
   
   func configureUI() {
+    navigationItem.title = viewModel.header
     titleTextField.text = viewModel.todoItem?.title
     detailTextView.text = viewModel.todoItem?.detail
     detailTextView.layer.cornerRadius = Numbers.textViewDefaultCornerRadius

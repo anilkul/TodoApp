@@ -47,4 +47,13 @@ class TodoListViewModel: TodoListViewModelProtocol {
   func makeTodoListCellViewModel(with todoItem: TodoItem) -> TodoListCellViewModelProtocol {
     return TodoListCellViewModel(todoItem: todoItem)
   }
+  
+  func deleteTodo(at indexPath: IndexPath, with completionDate: Double) {
+    dataService.deleteTodoItem(with: completionDate) { [weak self] in
+      guard let self = self else { return }
+      // Can reload list again from the db when got to list screen but this can work here without much effort.
+      self.cellViewModels.remove(at: indexPath.row)
+      self.updateData?()
+    }
+  }
 }
