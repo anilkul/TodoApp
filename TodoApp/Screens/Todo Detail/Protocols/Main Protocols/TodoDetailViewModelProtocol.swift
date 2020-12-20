@@ -10,5 +10,7 @@ import Foundation
 protocol TodoDetailViewModelProtocol {
   var todoItem: TodoItem? { get }
   var dataService: TodoDataEditable { get }
+  var isNew: Bool { get }
+  
   func completeEditing(title: String?, detail: String?)
 }
