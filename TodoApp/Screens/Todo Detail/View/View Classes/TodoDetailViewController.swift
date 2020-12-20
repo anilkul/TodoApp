@@ -8,22 +8,18 @@
 import UIKit
 
 class TodoDetailViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  
+  @IBOutlet weak var titleTextField: UITextField!
+  @IBOutlet weak var detailTextView: UITextView!
+  var viewModel: TodoDetailViewModelProtocol!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.
+  }
+  
+  @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
+    viewModel.completeEditing(title: titleTextField.text, detail: detailTextView.text)
+  }
+  
 }

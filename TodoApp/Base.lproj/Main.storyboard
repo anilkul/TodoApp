@@ -115,8 +115,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ljg-7H-S1B">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="4cS-jO-wlD"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="4cS-jO-wlD">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="LSi-K2-0LK" id="sWU-uB-5KP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailTextView" destination="5gX-EM-piT" id="M0B-PO-ayv"/>
+                        <outlet property="titleTextField" destination="eD8-mD-mP1" id="rtm-z7-TUH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gTL-5F-428" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

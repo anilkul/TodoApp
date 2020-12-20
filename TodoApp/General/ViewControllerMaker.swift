@@ -24,9 +24,9 @@ struct ViewControllerMaker {
     return viewController
   }
   
-  static func todoDetailViewController() -> TodoDetailViewController {
+  static func todoDetailViewController(todoItem: TodoItem? = nil) -> TodoDetailViewController {
     let todoDetailViewController = defineViewController(with: "TodoDetailViewController", from: UIStoryboard(name: "Main", bundle: nil), of: TodoDetailViewController.self)
-
+    todoDetailViewController.viewModel =  TodoDetailViewModel(dataService: TodoDataService(persistencyService: TodoPersistencyService()), todoItem: todoItem)
     return todoDetailViewController
   }
 }
