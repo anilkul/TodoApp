@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TodoDataService: TodoDataEditable {
+class TodoDataService: TodoDataServiceProtocol {
   var persistencyService: TodoPersistencyServiceProtocol
   
   init(persistencyService: TodoPersistencyServiceProtocol) {
@@ -19,6 +19,12 @@ class TodoDataService: TodoDataEditable {
       self.persistencyService.add(todoItem: todoItem) {
         completion?()
       }
+    }
+  }
+  
+  func todoList(fetchOffset: Int, _ completion: (([TodoItem]) -> Void)?) {
+    DispatchQueue.main.async {
+      completion?(self.persistencyService.fetchTodoList(fetchOffset: fetchOffset))
     }
   }
 }

@@ -31,11 +31,11 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
     let request: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
     request.sortDescriptors = [NSSortDescriptor(key: "completionDate", ascending: false)]
     request.returnsObjectsAsFaults = false
-    request.fetchLimit = 20
+    request.fetchLimit = Numbers.pageSize
     request.fetchOffset = fetchOffset
     do {
       let todoList = try managedObjectContext.fetch(request)
-      return todoList.compactMap { $0.todoItem }
+      return todoList.compactMap(\.todoItem)
     } catch {
       print(error)
       return []

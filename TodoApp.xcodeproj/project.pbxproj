@@ -37,6 +37,7 @@
 		88B86BEA258F84830003450A /* TodoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BE9258F84830003450A /* TodoDetailViewModel.swift */; };
 		88B86BEF258F849D0003450A /* TodoDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BEE258F849D0003450A /* TodoDetailViewModelProtocol.swift */; };
 		88B86BF3258F86A10003450A /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BF2258F86A10003450A /* Strings.swift */; };
+		88B86BFB258F8DEE0003450A /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86BFA258F8DEE0003450A /* Numbers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		88B86BE9258F84830003450A /* TodoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewModel.swift; sourceTree = "<group>"; };
 		88B86BEE258F849D0003450A /* TodoDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewModelProtocol.swift; sourceTree = "<group>"; };
 		88B86BF2258F86A10003450A /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		88B86BFA258F8DEE0003450A /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +301,7 @@
 			children = (
 				88B86BC9258F79D80003450A /* Typealiases.swift */,
 				88B86BF2258F86A10003450A /* Strings.swift */,
+				88B86BFA258F8DEE0003450A /* Numbers.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				88B86BAD258F760D0003450A /* CoerDataStack.swift in Sources */,
 				88B86B6D258F64BD0003450A /* SceneDelegate.swift in Sources */,
 				88B86BC6258F79B40003450A /* TodoPersistencyServiceProtocol.swift in Sources */,
+				88B86BFB258F8DEE0003450A /* Numbers.swift in Sources */,
 				88B86B75258F64BD0003450A /* TodoApp.xcdatamodeld in Sources */,
 				88B86BDD258F82390003450A /* TodoDataEditable.swift in Sources */,
 				88B86B94258F6EF30003450A /* TodoRoutable.swift in Sources */,
