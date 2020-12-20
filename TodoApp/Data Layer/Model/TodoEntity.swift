@@ -45,11 +45,13 @@ extension TodoEntity {
 
 extension TodoEntity {
   enum Predicate {
-    case update(completionDate: Double)
+    case update(completionDate: Double), delete(completionDate: Double)
     
     var query: NSPredicate {
       switch self {
       case .update(let completionDate):
+        return NSPredicate(format: "completionDate == %lf", completionDate)
+      case .delete(let completionDate):
         return NSPredicate(format: "completionDate == %lf", completionDate)
       }
     }

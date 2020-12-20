@@ -58,4 +58,20 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
       }
     }
   }
+  
+  func deleteTodo(with completionDate: Double, completion: (() -> Void)? = nil) {
+    CoreDataStack.shared.persistentContainer.performBackgroundTask { managedObjectContext in
+      let request: NSFetchRequest<NSFetchRequestResult> = TodoEntity.fetchRequest()
+      request.predicate = TodoEntity.Predicate.delete(completionDate: completionDate).query
+      request.returnsObjectsAsFaults = false
+      let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: request)
+      do {
+        try managedObjectContext.execute(batchDeleteRequest)
+        try managedObjectContext.saveIfNeeded()
+        completion?()
+      } catch {
+        fatalError(error.localizedDescription)
+      }
+    }
+  }
 }
