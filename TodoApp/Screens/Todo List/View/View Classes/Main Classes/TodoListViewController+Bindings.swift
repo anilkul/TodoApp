@@ -17,4 +17,13 @@ extension TodoListViewController {
       }
     }
   }
+  
+  func updateData() -> () -> Void {
+    return { [weak self] in
+      guard let self = self else { return }
+      DispatchQueue.main.async {
+        self.tableView.reloadData()
+      }
+    }
+  }
 }

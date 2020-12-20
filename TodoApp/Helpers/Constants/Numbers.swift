@@ -9,4 +9,5 @@ import Foundation
 
 struct Numbers {
   static let pageSize: Int = 20
+  static let initialFetchOffset = 0
 }
