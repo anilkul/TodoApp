@@ -16,7 +16,7 @@ extension TodoListViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cellViewModel = viewModel.cellViewModels[indexPath.row]
     guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TodoListCell.self), for: indexPath) as? TodoListCell else {
-      fatalError("Todo List Cell could not be created")
+      fatalError(ErrorLogger.ViewClassError.cellCouldNotBeCreated(className: String(describing: TodoListCell.self)).errorMessage(lineNumber: "\(#line)", methodName: "\(#function)", fileName: "\(#file)"))
     }
     cell.configureCell(with: cellViewModel, router: router)
     return cell

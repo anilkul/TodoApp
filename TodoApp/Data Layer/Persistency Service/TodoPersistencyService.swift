@@ -22,7 +22,8 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
         try managedObjectContext.saveIfNeeded()
         completion?()
       } catch {
-        fatalError(error.localizedDescription)
+        
+        fatalError(ErrorLogger.PersistencyServiceError.couldNotAdd.errorMessage(lineNumber: "\(#line)", methodName: "\(#function)", fileName: "\(#file)", errorDescription: error.localizedDescription))
       }
     }
   }
@@ -37,7 +38,7 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
       let todoList = try managedObjectContext.fetch(request)
       return todoList.compactMap(\.todoItem)
     } catch {
-      print(error)
+      print(ErrorLogger.PersistencyServiceError.couldNotFetch.errorMessage(lineNumber: "\(#line)", methodName: "\(#function)", fileName: "\(#file)"))
       return []
     }
   }
@@ -54,7 +55,7 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
         try managedObjectContext.saveIfNeeded()
         completion?()
       } catch {
-        fatalError(error.localizedDescription)
+        fatalError(ErrorLogger.PersistencyServiceError.couldNotUpdate.errorMessage(lineNumber: "\(#line)", methodName: "\(#function)", fileName: "\(#file)", errorDescription: error.localizedDescription))
       }
     }
   }
@@ -70,7 +71,7 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
         try managedObjectContext.saveIfNeeded()
         completion?()
       } catch {
-        fatalError(error.localizedDescription)
+        fatalError(ErrorLogger.PersistencyServiceError.couldNotDelete.errorMessage(lineNumber: "\(#line)", methodName: "\(#function)", fileName: "\(#file)", errorDescription: error.localizedDescription))
       }
     }
   }

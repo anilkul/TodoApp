@@ -32,7 +32,8 @@ class CoreDataStack {
          * The store could not be migrated to the current model version.
          Check the error message to determine what the actual problem was.
          */
-        fatalError("Unresolved error \(storeDescription) \(error), \(error.userInfo)")
+        
+        fatalError(ErrorLogger.PersistencyServiceError.unresolved.errorMessage(lineNumber: "\(#line)", methodName: "\(#function)", fileName: "\(#file)", errorDescription: "\(storeDescription) \(error), \(error.userInfo)"))
       }
     })
     return container
