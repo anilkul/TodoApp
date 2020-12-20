@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TodoListCell" customModule="TodoApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9e3-tV-qlF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="5gW-g6-j1n"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yx7-dU-7AP">
+                        <rect key="frame" x="20" y="21" width="335" height="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0t-jc-K5q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                        <connections>
+                            <action selector="todoItemPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aOz-y3-AW9"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="yx7-dU-7AP" secondAttribute="bottom" constant="20" id="4PS-j9-1n3"/>
+                    <constraint firstAttribute="trailing" secondItem="9e3-tV-qlF" secondAttribute="trailing" id="BaC-QO-bsO"/>
+                    <constraint firstItem="P0t-jc-K5q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="HIE-pY-uCW"/>
+                    <constraint firstAttribute="bottom" secondItem="P0t-jc-K5q" secondAttribute="bottom" id="I96-fp-VBf"/>
+                    <constraint firstAttribute="trailing" secondItem="P0t-jc-K5q" secondAttribute="trailing" id="c0H-wg-wF6"/>
+                    <constraint firstItem="yx7-dU-7AP" firstAttribute="top" secondItem="9e3-tV-qlF" secondAttribute="bottom" constant="20" id="cCv-Xe-FFm"/>
+                    <constraint firstItem="9e3-tV-qlF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cTH-jL-0W8"/>
+                    <constraint firstItem="P0t-jc-K5q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kOq-3i-9c5"/>
+                    <constraint firstAttribute="trailing" secondItem="yx7-dU-7AP" secondAttribute="trailing" constant="20" id="mco-Jx-vRG"/>
+                    <constraint firstItem="9e3-tV-qlF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nuo-ei-yCi"/>
+                    <constraint firstItem="yx7-dU-7AP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="otz-TS-6jC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="titleLabel" destination="yx7-dU-7AP" id="5u8-e6-6WP"/>
+            </connections>
+            <point key="canvasLocation" x="138.40579710144928" y="152.34375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
