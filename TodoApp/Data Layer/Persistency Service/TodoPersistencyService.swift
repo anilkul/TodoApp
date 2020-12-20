@@ -29,7 +29,7 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
   
   func fetchTodoList(fetchOffset: Int) -> [TodoItem] {
     let request: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
-    request.sortDescriptors = [NSSortDescriptor(key: "completionDate", ascending: false)]
+    request.sortDescriptors = TodoEntity.SortDescriptors.fetch.sortDescriptors
     request.returnsObjectsAsFaults = false
     request.fetchLimit = Numbers.pageSize
     request.fetchOffset = fetchOffset
@@ -39,6 +39,23 @@ class TodoPersistencyService: TodoPersistencyServiceProtocol {
     } catch {
       print(error)
       return []
+    }
+  }
+  
+  func update(todoItem: TodoItem, _ completion: VoidHandler?) {
+    CoreDataStack.shared.persistentContainer.performBackgroundTask { managedObjectContext in
+      managedObjectContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
+      let request: NSFetchRequest<TodoEntity> = TodoEntity.fetchRequest()
+      request.predicate = TodoEntity.Predicate.update(completionDate: todoItem.completionDate).query
+      request.returnsObjectsAsFaults = false
+      do {
+        let todoItemToUpdate = try managedObjectContext.fetch(request)
+        todoItemToUpdate.first?.assignValues(from: todoItem)
+        try managedObjectContext.saveIfNeeded()
+        completion?()
+      } catch {
+        fatalError(error.localizedDescription)
+      }
     }
   }
 }

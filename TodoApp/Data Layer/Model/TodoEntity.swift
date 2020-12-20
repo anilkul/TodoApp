@@ -42,3 +42,27 @@ extension TodoEntity {
     return TodoItem(title: title, detail: detail ?? "", completionDate: completionDate)
   }
 }
+
+extension TodoEntity {
+  enum Predicate {
+    case update(completionDate: Double)
+    
+    var query: NSPredicate {
+      switch self {
+      case .update(let completionDate):
+        return NSPredicate(format: "completionDate == %lf", completionDate)
+      }
+    }
+  }
+  
+  enum SortDescriptors {
+    case fetch
+    
+    var sortDescriptors: [NSSortDescriptor] {
+      switch self {
+      case .fetch:
+        return [NSSortDescriptor(key: "completionDate", ascending: false)]
+      }
+    }
+  }
+}
