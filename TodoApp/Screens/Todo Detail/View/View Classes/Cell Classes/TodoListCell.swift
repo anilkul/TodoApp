@@ -23,6 +23,6 @@ class TodoListCell: UITableViewCell {
   }
   
   @IBAction func todoItemPressed(_ sender: UIButton) {
-    
+    router.goToTodo(with: cellViewModel.todoItem)
   }
 }

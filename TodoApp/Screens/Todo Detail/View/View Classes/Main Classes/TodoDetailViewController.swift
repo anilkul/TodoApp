@@ -15,11 +15,15 @@ class TodoDetailViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    configureUI()
+  }
+  
+  func configureUI() {
+    titleTextField.text = viewModel.todoItem?.title
+    detailTextView.text = viewModel.todoItem?.detail
   }
   
   @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
     viewModel.completeEditing(title: titleTextField.text, detail: detailTextView.text)
   }
-  
 }

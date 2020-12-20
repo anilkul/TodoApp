@@ -9,5 +9,6 @@ import UIKit
 
 protocol Pushable {
   func newTodo()
+  func goToTodo(with todoItem: TodoItem)
   var pushViewController: ((UIViewController) -> Void)? { get set }
 }

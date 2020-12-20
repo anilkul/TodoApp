@@ -15,4 +15,9 @@ class TodoRouter: TodoRoutable {
     let todoDetailViewController: TodoDetailViewController = ViewControllerMaker.todoDetailViewController()
     pushViewController?(todoDetailViewController)
   }
+  
+  func goToTodo(with todoItem: TodoItem) {
+    let todoDetailViewController: TodoDetailViewController = ViewControllerMaker.todoDetailViewController(todoItem: todoItem)
+    pushViewController?(todoDetailViewController)
+  }
 }
