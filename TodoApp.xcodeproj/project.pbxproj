@@ -49,6 +49,7 @@
 		88B86C2B258F99290003450A /* TodoListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C2A258F99290003450A /* TodoListViewController+DataSource.swift */; };
 		88B86C2E258F99360003450A /* TodoListViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C2D258F99360003450A /* TodoListViewController+Delegate.swift */; };
 		88B86C34258FA4660003450A /* TodoDetailViewController+Bindings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C33258FA4660003450A /* TodoDetailViewController+Bindings.swift */; };
+		88B86C3B258FAFD30003450A /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B86C3A258FAFD30003450A /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		88B86C2A258F99290003450A /* TodoListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoListViewController+DataSource.swift"; sourceTree = "<group>"; };
 		88B86C2D258F99360003450A /* TodoListViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoListViewController+Delegate.swift"; sourceTree = "<group>"; };
 		88B86C33258FA4660003450A /* TodoDetailViewController+Bindings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TodoDetailViewController+Bindings.swift"; sourceTree = "<group>"; };
+		88B86C3A258FAFD30003450A /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 				88B86BC9258F79D80003450A /* Typealiases.swift */,
 				88B86BF2258F86A10003450A /* Strings.swift */,
 				88B86BFA258F8DEE0003450A /* Numbers.swift */,
+				88B86C3A258FAFD30003450A /* Colors.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				88B86BEF258F849D0003450A /* TodoDetailViewModelProtocol.swift in Sources */,
 				88B86BE1258F82700003450A /* TodoDataServiceProtocol.swift in Sources */,
 				88B86C02258F8F180003450A /* TodoListViewModel.swift in Sources */,
+				88B86C3B258FAFD30003450A /* Colors.swift in Sources */,
 				88B86BB4258F77760003450A /* TodoEntity.swift in Sources */,
 				88B86BBD258F77C30003450A /* NSManagedObjectContext+Extensions.swift in Sources */,
 				88B86C1B258F913F0003450A /* TodoListCellViewModelProtocol.swift in Sources */,

@@ -12,4 +12,6 @@ struct Numbers {
   static let pageSize: Int = 20
   static let initialFetchOffset = 0
   static let scrollViewOffsetThreshold: CGFloat = 10.0
+  static let textViewDefaultCornerRadius: CGFloat = 5.0
+  static let textViewDefaultBorderWidth: CGFloat = 1.0
 }

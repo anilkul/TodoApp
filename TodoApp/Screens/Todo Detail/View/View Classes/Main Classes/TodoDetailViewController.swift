@@ -25,7 +25,21 @@ class TodoDetailViewController: UIViewController {
   func configureUI() {
     titleTextField.text = viewModel.todoItem?.title
     detailTextView.text = viewModel.todoItem?.detail
+    detailTextView.layer.cornerRadius = Numbers.textViewDefaultCornerRadius
+    detailTextView.layer.borderWidth = Numbers.textViewDefaultBorderWidth
+    detailTextView.layer.borderColor = Colors.textViewDefaultBorderColor
+    titleTextField.becomeFirstResponder()
+    addKeyboardDismissGesture()
     addDeleteButtonIfNeeded()
+  }
+  
+  func addKeyboardDismissGesture() {
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+    self.view.addGestureRecognizer(tapGesture)
+  }
+  
+  @objc func dismissKeyboard() {
+    self.view.endEditing(true)
   }
   
   func addDeleteButtonIfNeeded() {
