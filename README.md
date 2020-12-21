@@ -7,7 +7,7 @@ The app includes 2 screens; list and detail.
 
 The screen where users' to do items are listed. Users can add new to do item by tapping + button at the top right corner and filling a title and detail.
 
-Also user can delete your to do items by swiping the item you want to left and tapping 'Delete' button 
+Also users can delete their to do items by swiping the item you want to left and tapping 'Delete' button 
 
 ## Detail Screen
 
