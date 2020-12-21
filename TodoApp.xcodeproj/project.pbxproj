@@ -238,7 +238,7 @@
 		88B86B92258F6ED20003450A /* Main Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				88B86B97258F6EFD0003450A /* Pushable.swift */,
+				88B86C1E258F92850003450A /* TodoListViewModelProtocol.swift */,
 			);
 			path = "Main Protocols";
 			sourceTree = "<group>";
@@ -435,7 +435,6 @@
 		88B86C18258F912B0003450A /* Main Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				88B86C1E258F92850003450A /* TodoListViewModelProtocol.swift */,
 				88B86BEE258F849D0003450A /* TodoDetailViewModelProtocol.swift */,
 			);
 			path = "Main Protocols";
@@ -472,6 +471,7 @@
 		88B86C4E2590D06A0003450A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				88B86B97258F6EFD0003450A /* Pushable.swift */,
 				88B86B93258F6EF30003450A /* TodoRoutable.swift */,
 			);
 			path = Protocols;
